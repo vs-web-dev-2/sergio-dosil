@@ -67,3 +67,10 @@ console.log(etiqueta);
 etiqueta = "horas: " + (12 + 12);
 // Comparaciones
 // > < >= <= == !=
+
+// Jugando con Tipos
+console.log(1 + 1);
+console.log("1" + "1");
+console.log("1" + 1);
+console.log(1 + "1");
+console.log("1" * "1");
