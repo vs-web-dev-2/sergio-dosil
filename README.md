@@ -9,3 +9,4 @@
 
 -   Desarrollador Web
 -   Vivo en _A Coruña_
+-   [Perfil de LinkedIn](https://www.linkedin.com/in/sergiodosil/)
