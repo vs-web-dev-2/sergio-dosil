@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Juego de tecleo</title>
+        <meta name="viewport" content="width=device-width" />
+        <meta
+            name="description"
+            content="Curso de frontend para trabajadores de Vector"
+        />
+        <meta name="keywords" content="curso, vector, frontend" />
+        <link rel="stylesheet" href="../styles/mvp.css" />
+        <script>
+            console.log("Empezando...");
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Juego de tecleo</h1>
+        </header>
+        <main>
+            <cite id="frase">En lugar de la mancha</cite>
+            <form>
+                <input type="text" id="tecleo" />
+                <button id="empezar">Empezar</button>
+            </form>
+            <p id="mensaje">Pulsa para empezar...</p>
+        </main>
+        <script>
+            const nodoBotonEmpezar = document.getElementById("empezar");
+            const nodoTecleo = document.getElementById("tecleo");
+            const nodoMensaje = document.getElementById("mensaje");
+            const frase = document.getElementById("frase").innerText;
+            nodoBotonEmpezar.addEventListener("click", (e) => {
+                e.preventDefault();
+                console.log("click");
+                nodoTecleo.value = "";
+                nodoTecleo.focus();
+                nodoMensaje.innerText = "Empezando";
+            });
+
+            nodoTecleo.addEventListener("input", (e) => {
+                const tecleado = nodoTecleo.value;
+                if (tecleado === frase) {
+                    nodoMensaje.innerText = "enhorabuena";
+                } else if (frase.startsWith(tecleado)) {
+                    nodoMensaje.innerText = "Vas bien";
+                } else {
+                    nodoMensaje.innerText = "Vas fatal";
+                }
+            });
+        </script>
+        <footer>
+            <p>Para Softtek y Vector por Alberto Basalo</p>
+        </footer>
+    </body>
+</html>
