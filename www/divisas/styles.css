@@ -1,0 +1,12 @@
+body {
+    margin-left: 10px;
+}
+
+.divisa {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.cotizacion {
+    font-style: italic;
+}

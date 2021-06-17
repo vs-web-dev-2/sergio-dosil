@@ -19,7 +19,7 @@
             <h1>Juego de tecleo</h1>
         </header>
         <main>
-            <cite id="frase">En lugar de la mancha</cite>
+            <cite id="frase">En un lugar de La Mancha</cite>
             <form>
                 <input type="text" id="tecleo" />
                 <button id="empezar">Empezar</button>
@@ -31,22 +31,28 @@
             const nodoTecleo = document.getElementById("tecleo");
             const nodoMensaje = document.getElementById("mensaje");
             const frase = document.getElementById("frase").innerText;
+
+            let inicio;
+
             nodoBotonEmpezar.addEventListener("click", (e) => {
                 e.preventDefault();
                 console.log("click");
                 nodoTecleo.value = "";
                 nodoTecleo.focus();
                 nodoMensaje.innerText = "Empezando";
+                inicio = Date.now();
             });
 
             nodoTecleo.addEventListener("input", (e) => {
                 const tecleado = nodoTecleo.value;
+                let tiempo = (Date.now() - inicio) / 1000;
                 if (tecleado === frase) {
-                    nodoMensaje.innerText = "enhorabuena";
+                    nodoMensaje.innerText =
+                        "enhorabuena, terminado en " + tiempo;
                 } else if (frase.startsWith(tecleado)) {
-                    nodoMensaje.innerText = "Vas bien";
+                    nodoMensaje.innerText = "Vas bien, llevas " + tiempo;
                 } else {
-                    nodoMensaje.innerText = "Vas fatal";
+                    nodoMensaje.innerText = "Vas fatal, llevas " + tiempo;
                 }
             });
         </script>
